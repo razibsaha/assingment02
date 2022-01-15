@@ -1,6 +1,159 @@
-/*
-################
-               Assignment 02 
-################
-*/
+/* --------------------------------
+-------------BASE------------------
+-------------------------------- */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* position: relative; */
+}
+
+body {
+	min-height: 100vh;
+	background: #fff;
+	color: #000;
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+}
+
+a {
+    text-decoration: none;
+
+}
+
+
+/* --------------------------------
+-------------CONTENT------------------
+-------------------------------- */
+
+.navbar {
+    /* background-color: #fff;
+    box-shadow: 1px 1px 4px 0 rgba(0, 0, 0, 0.1); */
+    position: fixed;
+    top: 95px;
+    width: 100%;
+    z-index: 3;
+}
+
+.navbar ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    overflow: hidden;
+    background-color: #fff;
+}
+
+.navbar li a {
+    color: #000;
+    font-size: 1rem;
+    font-weight: 600;
+    display: block;
+    padding: 10px 15px;
+}
+
+.navbar li a:hover, .navbar .logo a:hover,
+.navbar .menu-btn:hover {
+    color: #E02C6D;
+}
+
+.navbar .logo {
+    display: block;
+    float: left;
+    font-size: 1.5rem;
+    font-weight: 700;
+    padding: 10px 20px;
+    text-decoration: none;  
+}
+
+/* menu */
+
+.navbar .menu {
+  clear: both;
+  max-height: 0;
+  transition: max-height 0.2s ease-out;
+}
+
+/* menu icon */
+
+.navbar .menu-icon {
+  cursor: pointer;
+  float: right;
+  padding: 28px 20px;
+  position: relative;
+  user-select: none;
+}
+
+.navbar .menu-icon .nav-icon {
+  background: #E02C6D;
+  display: block;
+  height: 3px;
+  position: relative;
+  transition: background 0.2s ease-out;
+  width: 18px;
+}
+
+.navbar .menu-icon .nav-icon:before,
+.navbar .menu-icon .nav-icon:after {
+  background: #E02C6D;
+  content: "";
+  display: block;
+  height: 100%;
+  position: absolute;
+  transition: all 0.2s ease-out;
+  width: 100%;
+}
+
+.navbar .menu-icon .nav-icon:before {
+  top: 5px;
+}
+
+.navbar .menu-icon .nav-icon:after {
+  top: -5px;
+}
+
+/* menu btn */
+
+.navbar .menu-btn {
+  display: none;
+}
+
+.navbar .menu-btn:checked ~ .menu {
+  max-height: 240px;
+}
+
+.navbar .menu-btn:checked ~ .menu-icon .nav-icon {
+  background: transparent;
+}
+
+.navbar .menu-btn:checked ~ .menu-icon .nav-icon:before {
+  transform: rotate(-45deg);
+  top: 0;
+}
+
+.navbar .menu-btn:checked ~ .menu-icon .nav-icon:after {
+  transform: rotate(45deg);
+  top: 0;
+}
+
+/* 48em = 768px @ 16pt font */
+
+@media (min-width: 48em) {
+  .navbar li {
+    float: left;
+  }
+  .navbar li a {
+    padding: 20px 30px;
+  }
+  .navbar .menu {
+    clear: none;
+    float: right;
+    max-height: none;
+  }
+  .navbar .menu-icon {
+    display: none;
+  }
+}
+
 
