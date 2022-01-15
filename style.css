@@ -33,7 +33,7 @@ a {
 -------------CONTENT------------------
 -------------------------------- */
 .wrapper {
-    padding: 1.7rem 0 2rem 0;
+    padding: 1.7rem 0 10% 0;
     width: 100%;
     min-height: 100vh;
     overflow: hidden;
@@ -43,6 +43,10 @@ a {
     justify-content: space-between;
 }
 
+.cardwrapper{
+  max-width: 841rem;
+  margin: 0 auto;
+}
 .container {
     max-width: 81rem;
     width: 100%;
@@ -196,6 +200,20 @@ header .container {
   }
 
 
+.cards {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    list-style: none;
+    margin: 0 auto;
+    padding: 0 auto;
+  }
+  
+.cards_item {
+    display: grid;
+    grid-template-columns: repeat(1fr);
+    padding: 1rem;
+  }
+
 @media screen and (max-width: 870px) {
     .hamburger-menu {
       display: flex;
@@ -284,9 +302,56 @@ header .container {
       bottom: -180px;
       left: -150px;
     }
+
+    .cards_item {
+      width: 33.3333%;
+    }
+  }
+  
+  .card {
+    background-color: white;
+    border-radius: 0.25rem;
+    box-shadow: 0 20px 40px -14px rgba(0, 0, 0, 0.25);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+  }
+  
+  .card_content {
+    padding: 1rem;
+  }
+  
+  .ratingstar {
+    color: var(--starColor);
+    font-size: 1.1rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: capitalize;
+    margin: 0px;
+  }
+
+  .card_title {
+    color: var(--paragraphText);
+    font-size: 1.1rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: capitalize;
+    margin: 0px;
+  }
+  
+  .card_text {
+    color: var(--paragraphText);
+    font-size: 0.875rem;
+    line-height: 1.5;
+    margin-bottom: 1.25rem;    
+    font-weight: 400;
   }
   
   @media screen and (max-width: 470px) {
+    .cards_item {
+      width: 50%;
+    }
+
     .container {
       padding: 0 1.5rem;
     }
